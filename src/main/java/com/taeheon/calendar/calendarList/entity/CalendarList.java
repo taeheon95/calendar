@@ -40,4 +40,16 @@ public class CalendarList {
     private Boolean isPrimary;
     private Boolean isDeleted;
 
+    public CalendarList(User user, CalendarEntity calendar, Role role) {
+        this.user = user;
+        this.calendar = calendar;
+        this.subjectOverride = calendar.getSubject();
+        this.isPrimary = false;
+        this.isDeleted = false;
+        this.colorId = "#ffffff";
+        this.backgroundColor = "#ffffff";
+        this.foregroundColor = "#ffffff";
+        this.isHidden = false;
+    }
+
 }

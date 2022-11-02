@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EventTime {
-    private Date date;
+    private String date;
     private Date datetime;
     private String timezone;
 }
