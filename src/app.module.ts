@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { OrmConfig } from './config/OrmConfig';
 import { EventModule } from './event/event.module';
+import { TimezoneModule } from './timezone/timezone.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { EventModule } from './event/event.module';
     UserModule,
     CalendarModule,
     EventModule,
+    TimezoneModule,
   ],
   controllers: [AppController],
   providers: [AppService],

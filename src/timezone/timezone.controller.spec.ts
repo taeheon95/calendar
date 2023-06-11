@@ -1,19 +1,18 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TestingModule } from '@nestjs/testing';
 import { TimezoneController } from './timezone.controller';
-import { AppModule } from '../app.module';
 import Timezone from './model/Timezone.entity';
 import { TimezoneService } from './timezone.service';
+import { createDefaultTestingModule } from 'src/util/test.util';
 
 describe('TimezoneController', () => {
   let controller: TimezoneController;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [AppModule, TypeOrmModule.forFeature([Timezone])],
-      controllers: [TimezoneController],
+    const module: TestingModule = await createDefaultTestingModule({
       providers: [TimezoneService],
-    }).compile();
+      entities: [Timezone],
+      controllers: [TimezoneController],
+    });
 
     controller = module.get<TimezoneController>(TimezoneController);
   });
